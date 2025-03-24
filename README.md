@@ -2,25 +2,25 @@
 # Sürücüsüz Metro Simülasyonu (Rota Optimizasyonu)
 
 ## Proje Hakkında
-Bu proje, bir metro ağında iki istasyon arasındaki **en az aktarmalı rotayı (BFS)** ve **en hızlı rotayı (A*)** bulmayı amaçlamaktadır. Proje dosyaları incelendiğinde, bazı sınıfların (`Istasyon`, `MetroAgi`) ve yapıların (`komsular`, `istasyonlar`, `hatlar`) önceden tanımlandığı görülmüştür.
+Bu proje, bir metro ağında iki istasyon arasındaki **en az aktarmalı rotayı (BFS)** ve **en hızlı rotayı (A*)** bulmayı amaçlamaktadır. Bu projede, iletilen instructionda bazı sınıflar (`Istasyon`, `MetroAgi`) ve yapılar (`komsular`, `istasyonlar`, `hatlar`) önceden tanımlanmıştır.
 
-Projede, geliştiriciden **BFS algoritmasını (en az aktarmalı rota bulma)** ve **A* algoritmasını (en hızlı rota bulma)** kendi metotları olarak tamamlaması istenmiştir.
+Projede, **BFS algoritmasını (en az aktarmalı rota bulma)** ve **A* algoritmasını (en hızlı rota bulma)** tanımlı metotlar içerisinde tamamlanması istenmiştir.
 
 ## Kullanılan Teknolojiler ve Kütüphaneler
 - **Python 3** - Projenin ana dili
 - **collections.deque:** BFS algoritmasında kuyruk yapısı oluşturmak için kullanıldı.
 - **heapq:** A* algoritmasında öncelik kuyruğu oluşturmak için kullanıldı.
-- **typing:** Tür belirlemeleri için (`Optional`, `List`, `Tuple`)
+- **typing:** Tür belirlemeleri için (`Optional`, `List`, `Tuple`) kullanıldı.
 
 ## Algoritmaların Çalışma Mantığı
 
 ### 1. En Az Aktarmalı Rota Bulma (`en_az_aktarma_bul` - BFS)
-**BFS algoritması**, her adımda istasyonları genişleterek tüm olasılıkları keşfeder. İstasyonlar, bir **FIFO Kuyruğu (`deque`)** yardımıyla sırayla ziyaret edilir.
+**BFS algoritması**, her adımda istasyonları genişleterek tüm olasılıkları değerlendirir. İstasyonlar, bir **FIFO Kuyruğu (`deque`)** yardımıyla sırayla ziyaret edilir.
 - **Başlangıç İstasyonu** doğrudan `ziyaret_edildi` listesine eklenir.
 - Her adımdaki komşular, daha önce ziyaret edilmediyse kuyruğa eklenir.
 - Hedefe ulaşıldığında, rota döndürülür.
 
-Bu algoritma, en kısa (en az aktarmalı) rotayı bulmada garantilidir.
+Bu algoritma, en kısa (en az aktarmalı) rotayı bulmayı garanti eder.
 
 ### 2. En Hızlı Rota Bulma (`en_hizli_rota_bul` - A*)
 **A* algoritması**, her adımda maliyeti en düşük olan istasyonu seçerek ilerler. 
@@ -32,7 +32,7 @@ Bu algoritma, en kısa (en az aktarmalı) rotayı bulmada garantilidir.
 Bu algoritma, zaman bazlı en hızlı rotayı bulmayı sağlar.
 
 ## Neden Bu Algoritmalar Kullanıldı?
-- **BFS (Breadth-First Search):** Düz bir arama algoritması olup, en kısa yolu (aktarma sayısını) bulmak için garantili bir çözümdür.
+- **BFS (Breadth-First Search):** Düz bir arama algoritması olup, en kısa yolu (aktarma sayısını) bulmayı garanti eder.
 - **A* (A-Star):** Önceliklendirilmiş arama algoritması olup, süre bazlı en iyi rotayı bulmak için daha verimlidir.
 
 ## 📌 Örnek Kullanım ve Test Sonuçları
@@ -50,7 +50,7 @@ Bu algoritma, zaman bazlı en hızlı rotayı bulmayı sağlar.
 ```
 
 ## Ek Test Senaryoları
-Aşağıdaki ek senaryolar, algoritmaların farklı durumlarda nasıl çalıştığını test etmek için kullanılmıştır:
+Aşağıdaki tarafımızca hazırlanan ek senaryolar, algoritmaların farklı durumlarda nasıl çalıştığını test etmek için kullanılmıştır:
 
 - **OSB'den Batıkent'e:** En hızlı rota: 18 dakika
 - **Gar'dan Kızılay'a:** En hızlı rota: 9 dakika
