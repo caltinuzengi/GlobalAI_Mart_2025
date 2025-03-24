@@ -66,6 +66,8 @@ class MetroAgi:
                     kuyruk.append((komsu, rota + [komsu]))
         return None
 
+        # the end of TODO
+
     def en_hizli_rota_bul(
         self, baslangic_id: str, hedef_id: str
     ) -> Optional[Tuple[List[Istasyon], int]]:
@@ -105,6 +107,8 @@ class MetroAgi:
                         pq, (toplam_sure + sure, id(komsu), komsu, rota + [komsu])
                     )
         return None
+
+        # the end of TODO
 
 
 # Örnek Kullanım
@@ -191,7 +195,6 @@ if __name__ == "__main__":
     # Ek Senaryolar ##########################################
     #########################################################
 
-    # Ek Senaryolar
     print("\n=== Ek Test Senaryoları ===")
 
     # Senaryo 4: OSB'den Batıkent'e
@@ -205,7 +208,7 @@ if __name__ == "__main__":
         rota, sure = sonuc
         print(f"En hızlı rota ({sure} dakika):", " -> ".join(i.ad for i in rota))
 
-    # Senaryo 5: Gar'dan Kızılay'a (İki farklı hat üzerinden geçiş)
+    # Senaryo 5: Gar'dan Kızılay'a
     print("\n5. Gar'dan Kızılay'a:")
     rota = metro.en_az_aktarma_bul("M4", "K1")
     if rota:
